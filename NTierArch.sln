@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NTier.Api", "NTier.Api\NTier.Api.csproj", "{D1DF099B-C07C-49A9-8533-E2C1B54B8B4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NTier.Core", "NTier.Core\NTier.Core.csproj", "{456FB727-6207-4892-8DC0-A4333A2FBBE4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NTier.Data", "NTier.Data\NTier.Data.csproj", "{EA6C6D37-DCE0-4970-998C-35BF0D6A708D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NTier.Service", "NTier.Service\NTier.Service.csproj", "{A2495C06-734C-4046-B4FA-9D6219F086A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NTier.Entity", "NTier.Entity\NTier.Entity.csproj", "{0C480576-399D-4C4B-89FF-9AA244A4F040}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTier.Utils", "NTier.Utils\NTier.Utils.csproj", "{02E78EC3-7AFE-4C97-BC19-A3E64D7DC2FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1DF099B-C07C-49A9-8533-E2C1B54B8B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1DF099B-C07C-49A9-8533-E2C1B54B8B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1DF099B-C07C-49A9-8533-E2C1B54B8B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1DF099B-C07C-49A9-8533-E2C1B54B8B4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{456FB727-6207-4892-8DC0-A4333A2FBBE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{456FB727-6207-4892-8DC0-A4333A2FBBE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{456FB727-6207-4892-8DC0-A4333A2FBBE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{456FB727-6207-4892-8DC0-A4333A2FBBE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA6C6D37-DCE0-4970-998C-35BF0D6A708D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA6C6D37-DCE0-4970-998C-35BF0D6A708D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA6C6D37-DCE0-4970-998C-35BF0D6A708D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA6C6D37-DCE0-4970-998C-35BF0D6A708D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2495C06-734C-4046-B4FA-9D6219F086A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2495C06-734C-4046-B4FA-9D6219F086A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2495C06-734C-4046-B4FA-9D6219F086A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2495C06-734C-4046-B4FA-9D6219F086A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C480576-399D-4C4B-89FF-9AA244A4F040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C480576-399D-4C4B-89FF-9AA244A4F040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C480576-399D-4C4B-89FF-9AA244A4F040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C480576-399D-4C4B-89FF-9AA244A4F040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E78EC3-7AFE-4C97-BC19-A3E64D7DC2FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E78EC3-7AFE-4C97-BC19-A3E64D7DC2FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E78EC3-7AFE-4C97-BC19-A3E64D7DC2FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E78EC3-7AFE-4C97-BC19-A3E64D7DC2FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {971664F6-F2F8-4B22-BCF1-56B595C30A8E}
+	EndGlobalSection
+EndGlobal
