@@ -25,7 +25,6 @@ namespace NTier.Api.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> GetAllBlogs()
         {
-
             var result = await _blogService.GetAllBlogs();
 
             if (result.Success)
