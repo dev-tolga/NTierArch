@@ -11,6 +11,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.10" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,4 +20,7 @@
     <ProjectReference Include="..\NTier.Service\NTier.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Microsoft.AspNetCore.Identity.UI" />
+  </ItemGroup>
 </Project>

@@ -12,6 +12,7 @@ using Microsoft.OpenApi.Models;
 using NTier.Api.Infrastructure;
 using NTier.Core.UnitOfWork;
 using NTier.Data;
+using NTier.Data.Entities;
 using NTier.Service.BlogService;
 using System;
 using System.Collections.Generic;
@@ -36,16 +37,17 @@ namespace NTier.Api
             services.AddControllers();
 
             //DbContext
-            services.AddDbContext<NTierDBContext>().AddUnitOfWork<NTierDBContext>(Configuration);
+            //services.AddDbContext<NTierDBContext>().AddUnitOfWork<NTierDBContext>(Configuration);
 
-            //services.AddDbContext<NTierDBContext>(options =>
-            //   options.UseSqlServer(
-            //       Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<NTierDBContext>(options =>
+               options.UseSqlServer(
+                Configuration.GetConnectionString("DefaultConnection"),b=>b.MigrationsAssembly("NTier.Data")));
+           // services.AddDefaultIdentity<ApplicationUser>().AddEntityFrameworkStores<NTierDBContext>();
 
             //InMemeoryCache
             services.AddMemoryCache();
 
-            services.AddScoped<IBlogService, BlogService>();
+            services.AddTransient<IBlogService, BlogService>();
             //Automapper
             var mappingConfig = new MapperConfiguration(mc =>
             {
