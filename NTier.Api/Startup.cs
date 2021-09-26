@@ -37,17 +37,17 @@ namespace NTier.Api
             services.AddControllers();
 
             //DbContext
-            //services.AddDbContext<NTierDBContext>().AddUnitOfWork<NTierDBContext>(Configuration);
+            services.AddDbContext<NTierDBContext>().AddUnitOfWork<NTierDBContext>(Configuration);
 
-            services.AddDbContext<NTierDBContext>(options =>
-               options.UseSqlServer(
-                Configuration.GetConnectionString("DefaultConnection"),b=>b.MigrationsAssembly("NTier.Data")));
-           // services.AddDefaultIdentity<ApplicationUser>().AddEntityFrameworkStores<NTierDBContext>();
+            //services.AddDbContext<NTierDBContext>(options =>
+            //options.UseSqlServer(
+           // Configuration.GetConnectionString("DefaultConnection"),b=>b.MigrationsAssembly("NTier.Data")));
+           
 
             //InMemeoryCache
             services.AddMemoryCache();
 
-            services.AddTransient<IBlogService, BlogService>();
+            services.AddScoped<IBlogService, BlogService>();
             //Automapper
             var mappingConfig = new MapperConfiguration(mc =>
             {
