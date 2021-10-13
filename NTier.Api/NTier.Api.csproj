@@ -12,6 +12,7 @@
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,5 +23,6 @@
 
   <ItemGroup>
     <None Remove="Microsoft.AspNetCore.Identity.UI" />
+    <None Remove="Newtonsoft.Json" />
   </ItemGroup>
 </Project>

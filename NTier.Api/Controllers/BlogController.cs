@@ -33,7 +33,19 @@ namespace NTier.Api.Controllers
             }
 
             return BadRequest(result.Message);
-          
+
+        }
+
+        [HttpPost("add")]
+        public IActionResult AddBlog( Blog blog)
+        {
+            var result =  _blogService.AddBlog(blog);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+            return BadRequest(result.Message);
+
         }
     }
 }

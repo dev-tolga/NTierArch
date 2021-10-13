@@ -11,5 +11,6 @@ namespace NTier.Service.BlogService
    public interface IBlogService
     {
         Task<IDataResult<List<Blog>>> GetAllBlogs();
+        IResults AddBlog(Blog blog);
     }
 }

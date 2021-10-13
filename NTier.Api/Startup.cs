@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using NTier.Api.Infrastructure;
+using NTier.Core.Caching;
 using NTier.Core.UnitOfWork;
 using NTier.Data;
 using NTier.Data.Entities;
@@ -39,15 +40,20 @@ namespace NTier.Api
             //DbContext
             services.AddDbContext<NTierDBContext>().AddUnitOfWork<NTierDBContext>(Configuration);
 
-            //services.AddDbContext<NTierDBContext>(options =>
-            //options.UseSqlServer(
-           // Configuration.GetConnectionString("DefaultConnection"),b=>b.MigrationsAssembly("NTier.Data")));
-           
+            services.AddDbContext<NTierDBContext>(options =>
+            options.UseSqlServer(
+            Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("NTier.Data")));
+
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = "localhost:6379";
+            });
 
             //InMemeoryCache
             services.AddMemoryCache();
 
-            services.AddScoped<IBlogService, BlogService>();
+            services.AddTransient<IBlogService, BlogService>();
+            services.AddTransient<IRedisCacheService, RedisCacheService>();
             //Automapper
             var mappingConfig = new MapperConfiguration(mc =>
             {
