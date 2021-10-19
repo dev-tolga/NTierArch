@@ -37,7 +37,7 @@ namespace NTier.Api.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult AddBlog( Blog blog)
+        public IActionResult AddBlog(Blog blog)
         {
             var result =  _blogService.AddBlog(blog);
             if (result.Success)
