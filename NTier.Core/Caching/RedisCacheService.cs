@@ -10,7 +10,7 @@ namespace NTier.Core.Caching
     {
         private static IDatabase _db;
         private static readonly string host = "localhost";
-        private static readonly int port = 6380;
+        private static readonly int port = 6379;
        // private  static ConnectionMultiplexer connect;
 
         public RedisCacheService()

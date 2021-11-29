@@ -22,7 +22,10 @@ namespace NTier.Core.Utils.Helper
             foreach (var item in serializedObject)
                 jsonString += item + ",";
             jsonString += "]";
-            return JsonConvert.DeserializeObject<T>(jsonString);
+
+
+            var d = JsonConvert.DeserializeObject<T>(jsonString);
+            return d;
         }
         protected virtual IList<T> DeserializeList<T> (List<object> redisValues)
         {

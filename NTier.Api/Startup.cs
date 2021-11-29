@@ -51,7 +51,7 @@ namespace NTier.Api
 
             //InMemeoryCache
             services.AddMemoryCache();
-
+            services.AddHttpContextAccessor();
             services.AddTransient<IBlogService, BlogService>();
             services.AddTransient<IRedisCacheService, RedisCacheService>();
             //Automapper

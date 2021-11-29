@@ -22,7 +22,7 @@ namespace NTier.Service.BlogService
         private readonly IMapper _mapper;
         private readonly IRedisCacheService _redisCacheService;
 
-        public BlogService(IUnitOfWork<NTierDBContext> appDbContext, IMapper mapper, IMemoryCache memoryCache,IRedisCacheService redisCacheService)
+        public BlogService(IUnitOfWork<NTierDBContext> appDbContext, IMapper mapper, IMemoryCache memoryCache, IRedisCacheService redisCacheService)
         {
             _mapper = mapper;
             _memoryCache = memoryCache;
@@ -44,7 +44,12 @@ namespace NTier.Service.BlogService
                     return new SuccessDataResult<List<Blog>>(cachedResult, "from Cache");
                 }
 
-               
+
+                //if (_redisCacheService.Get<List<Blog>>("deneme").Count > 0)
+                //{
+                //    return new SuccessDataResult<List<Blog>>(_redisCacheService.Get<List<Blog>>("deneme"), "from redisCache");
+                //}
+
 
                 //EF repo
                 dataResult = new SuccessDataResult<List<Blog>>(await _appDbContext.GetRepository<Blog>().TableNoTracking.ToListAsync());
@@ -55,14 +60,14 @@ namespace NTier.Service.BlogService
                 //redis cache işlemi
                 _redisCacheService.Set("deneme", dataResult.Data, 10);
 
-            // var data =   _redisCacheService.Get<Blog>("deneme");
+                // var data =   _redisCacheService.Get<Blog>("deneme");
 
                 //result.Data = bloglistResult;
                 //result.Message = "from app service";
             }
             catch (Exception ex)
             {
-                
+
                 //result.IsSuccess = false;
                 //result.Message = ex.Message;
             }
